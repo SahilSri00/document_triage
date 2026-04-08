@@ -1,3 +1,14 @@
+---
+title: Document Triage
+emoji: 👀
+colorFrom: gray
+colorTo: yellow
+sdk: gradio
+sdk_version: "3.50.2"
+app_file: app.py
+pinned: false
+---
+
 # 📄 Document Triage & Routing Environment
 
 A **Gymnasium-based reinforcement learning environment** where AI agents learn to process, classify, and route office documents — simulating a real-world document triage workflow.
