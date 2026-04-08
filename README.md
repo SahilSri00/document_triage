@@ -3,9 +3,8 @@ title: Document Triage
 emoji: 👀
 colorFrom: gray
 colorTo: yellow
-sdk: gradio
-sdk_version: 6.11.0
-app_file: app.py
+sdk: docker
+app_port: 7860
 pinned: false
 ---
 
