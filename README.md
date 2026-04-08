@@ -1,4 +1,3 @@
-
 # 📄 Document Triage & Routing Environment
 
 A **Gymnasium-based reinforcement learning environment** where AI agents learn to process, classify, and route office documents — simulating a real-world document triage workflow.
@@ -8,6 +7,7 @@ A **Gymnasium-based reinforcement learning environment** where AI agents learn t
 ## 🎯 Overview
 
 An AI agent receives a document and must:
+
 1. **Classify** its type (invoice, contract, report, etc.)
 2. **Extract** key fields (amounts, dates, names)
 3. **Validate** extracted information against the document
@@ -79,20 +79,21 @@ pytest tests/ -v
 
 ## 🎮 Action Space
 
-| ID | Action | Parameter | Type |
-|----|--------|-----------|------|
-| 0 | `classify` | document type (e.g. `"invoice"`) | Work |
-| 1 | `extract` | `"field_name:value"` (e.g. `"amount:$4,250.00"`) | Work |
-| 2 | `validate` | field name (e.g. `"amount"`) | Work |
-| 3 | `flag_missing` | field name (e.g. `"po_number"`) | Work |
-| 4 | `flag_inconsistency` | description (e.g. `"salary mismatch"`) | Work |
-| 5 | `request_clarification` | question text | Work |
-| 6 | `route_to` | department (e.g. `"finance"`) | **Terminal** |
-| 7 | `escalate` | reason text | **Terminal** |
+| ID  | Action                  | Parameter                                        | Type         |
+| --- | ----------------------- | ------------------------------------------------ | ------------ |
+| 0   | `classify`              | document type (e.g. `"invoice"`)                 | Work         |
+| 1   | `extract`               | `"field_name:value"` (e.g. `"amount:$4,250.00"`) | Work         |
+| 2   | `validate`              | field name (e.g. `"amount"`)                     | Work         |
+| 3   | `flag_missing`          | field name (e.g. `"po_number"`)                  | Work         |
+| 4   | `flag_inconsistency`    | description (e.g. `"salary mismatch"`)           | Work         |
+| 5   | `request_clarification` | question text                                    | Work         |
+| 6   | `route_to`              | department (e.g. `"finance"`)                    | **Terminal** |
+| 7   | `escalate`              | reason text                                      | **Terminal** |
 
 **Terminal actions** end the episode immediately. **Work actions** continue the episode.
 
 ### Action Formats
+
 ```python
 # Dict (standard)
 env.step({"action_type": 0, "parameter": "invoice"})
@@ -108,14 +109,14 @@ env.step("classify invoice")
 
 ## 📊 Grader (6 Components)
 
-| Component | Weight | Description |
-|-----------|--------|-------------|
-| Classification | 15% | Correct document type? |
-| Field Extraction | 30% | Fraction of fields correctly extracted |
-| Missing Detection | 15% | Correctly flagged missing fields (with false-positive penalty) |
-| Inconsistency Detection | 10% | Correctly flagged inconsistencies |
-| Routing | 20% | Correct department / escalation decision |
-| Efficiency | 10% | Steps used vs. optimal |
+| Component               | Weight | Description                                                    |
+| ----------------------- | ------ | -------------------------------------------------------------- |
+| Classification          | 15%    | Correct document type?                                         |
+| Field Extraction        | 30%    | Fraction of fields correctly extracted                         |
+| Missing Detection       | 15%    | Correctly flagged missing fields (with false-positive penalty) |
+| Inconsistency Detection | 10%    | Correctly flagged inconsistencies                              |
+| Routing                 | 20%    | Correct department / escalation decision                       |
+| Efficiency              | 10%    | Steps used vs. optimal                                         |
 
 The final score produces a letter grade: **A+ → F**.
 
@@ -124,19 +125,20 @@ The final score produces a letter grade: **A+ → F**.
 ## 🌐 REST API
 
 Start the server:
+
 ```bash
 uvicorn api:app --host 0.0.0.0 --port 7860 --reload
 ```
 
 ### Endpoints
 
-| Method | Path | Description |
-|--------|------|-------------|
-| `POST` | `/reset` | Start a new episode |
-| `POST` | `/step` | Take an action |
-| `GET`  | `/tasks` | List available tasks |
+| Method | Path       | Description                |
+| ------ | ---------- | -------------------------- |
+| `POST` | `/reset`   | Start a new episode        |
+| `POST` | `/step`    | Take an action             |
+| `GET`  | `/tasks`   | List available tasks       |
 | `GET`  | `/actions` | List actions & departments |
-| `GET`  | `/health` | Health check |
+| `GET`  | `/health`  | Health check               |
 
 ### Example
 
@@ -175,7 +177,9 @@ docker run -p 7860:7860 document-triage
 ## 📈 Extending
 
 ### Add more tasks
+
 Edit `tasks/tasks.json`. Each task needs:
+
 ```json
 {
   "task_id": "easy_006",
@@ -194,6 +198,7 @@ Edit `tasks/tasks.json`. Each task needs:
 ```
 
 ### Build a custom agent
+
 ```python
 from src.environment import DocumentTriageEnv
 
@@ -210,4 +215,3 @@ obs, reward, terminated, truncated, info = env.step(action)
 ## 📜 License
 
 MIT
->>>>>>> 245cb90 (Initial Deployment)
