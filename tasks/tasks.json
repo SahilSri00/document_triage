@@ -1,0 +1,217 @@
+[
+  {
+    "task_id": "easy_001",
+    "difficulty": "easy",
+    "document_text": "INVOICE\n\nInvoice Number: INV-2024-0847\nDate: March 15, 2024\n\nFrom: Acme Corporation\n123 Business Avenue, Suite 400\nNew York, NY 10001\n\nTo: GlobalTech Solutions\n456 Innovation Drive\nSan Francisco, CA 94105\n\nDescription: Cloud infrastructure services - Q1 2024\nQuantity: 1\nUnit Price: $4,250.00\nTotal Amount: $4,250.00\n\nPayment Terms: Net 30\nDue Date: April 14, 2024\n\nBank Details:\nBank: First National Bank\nAccount: 7823-4561-0099\nRouting: 021000021",
+    "metadata": {"priority": "normal", "source": "email", "date_received": "2024-03-15", "sender": "billing@acmecorp.com"},
+    "answer_key": {
+      "correct_type": "invoice",
+      "extractable_fields": {"invoice_number": "INV-2024-0847", "date": "March 15, 2024", "vendor": "Acme Corporation", "amount": "$4,250.00", "due_date": "April 14, 2024"},
+      "missing_fields": [],
+      "inconsistencies": [],
+      "correct_department": "finance",
+      "should_escalate": false
+    }
+  },
+  {
+    "task_id": "easy_002",
+    "difficulty": "easy",
+    "document_text": "EMPLOYEE ONBOARDING LETTER\n\nDate: February 1, 2024\n\nDear Priya Sharma,\n\nWe are pleased to confirm your appointment as Senior Software Engineer at TechVista Inc., effective March 1, 2024.\n\nPosition: Senior Software Engineer\nDepartment: Engineering\nReporting To: Rajesh Kumar, VP of Engineering\nAnnual Salary: $125,000\nStart Date: March 1, 2024\nWork Location: Bangalore Office\n\nPlease complete all onboarding documents before your start date.\n\nBest regards,\nMeera Patel\nHead of Human Resources\nTechVista Inc.",
+    "metadata": {"priority": "normal", "source": "internal", "date_received": "2024-02-01", "sender": "hr@techvista.com"},
+    "answer_key": {
+      "correct_type": "letter",
+      "extractable_fields": {"employee_name": "Priya Sharma", "position": "Senior Software Engineer", "salary": "$125,000", "start_date": "March 1, 2024", "department": "Engineering"},
+      "missing_fields": [],
+      "inconsistencies": [],
+      "correct_department": "hr",
+      "should_escalate": false
+    }
+  },
+  {
+    "task_id": "easy_003",
+    "difficulty": "easy",
+    "document_text": "PURCHASE ORDER\n\nPO Number: PO-2024-3321\nDate: January 22, 2024\n\nFrom: BrightStar Manufacturing\nTo: SupplyChain Direct Ltd.\n\nItems Ordered:\n1. Industrial Printer Cartridges x 50 - $15.00 ea - $750.00\n2. A4 Paper Reams x 200 - $5.50 ea - $1,100.00\n3. Binding Machine x 2 - $320.00 ea - $640.00\n\nSubtotal: $2,490.00\nTax (8%): $199.20\nTotal: $2,689.20\n\nDelivery Address: Warehouse B, 789 Industrial Pkwy, Chicago, IL 60607\nRequested Delivery: February 5, 2024\n\nApproved by: David Chen, Operations Manager",
+    "metadata": {"priority": "normal", "source": "email", "date_received": "2024-01-22", "sender": "procurement@brightstar.com"},
+    "answer_key": {
+      "correct_type": "form",
+      "extractable_fields": {"po_number": "PO-2024-3321", "date": "January 22, 2024", "vendor": "SupplyChain Direct Ltd.", "total_amount": "$2,689.20", "delivery_date": "February 5, 2024"},
+      "missing_fields": [],
+      "inconsistencies": [],
+      "correct_department": "operations",
+      "should_escalate": false
+    }
+  },
+  {
+    "task_id": "easy_004",
+    "difficulty": "easy",
+    "document_text": "EXPENSE REIMBURSEMENT RECEIPT\n\nEmployee: Mark Johnson\nEmployee ID: EMP-4472\nDepartment: Sales\nDate of Expense: March 3, 2024\n\nExpense Type: Client Dinner\nVendor: The Grand Bistro\nLocation: 321 Main St, Boston, MA\nAmount: $187.50\nPayment Method: Personal Credit Card\n\nBusiness Purpose: Dinner meeting with Horizon Media representatives to discuss Q2 partnership.\n\nAttachments: Restaurant receipt (scanned)\n\nApproval Status: Pending Manager Approval",
+    "metadata": {"priority": "low", "source": "portal", "date_received": "2024-03-04", "sender": "mark.johnson@company.com"},
+    "answer_key": {
+      "correct_type": "receipt",
+      "extractable_fields": {"employee_name": "Mark Johnson", "employee_id": "EMP-4472", "amount": "$187.50", "expense_type": "Client Dinner", "date": "March 3, 2024"},
+      "missing_fields": [],
+      "inconsistencies": [],
+      "correct_department": "finance",
+      "should_escalate": false
+    }
+  },
+  {
+    "task_id": "easy_005",
+    "difficulty": "easy",
+    "document_text": "NON-DISCLOSURE AGREEMENT\n\nThis Non-Disclosure Agreement (NDA) is entered into as of April 1, 2024.\n\nBetween:\nDisclosing Party: NovaTech Industries, 500 Tech Park, Austin, TX\nReceiving Party: BlueSky Consulting, 200 Commerce Blvd, Denver, CO\n\nPurpose: Evaluation of potential partnership for Project Aurora.\n\nConfidential Information includes all technical specifications, business plans, and financial data shared during the evaluation period.\n\nDuration: 2 years from the date of signing.\nGoverning Law: State of Texas\n\nSigned:\nNovaTech Industries: Sarah Williams, CEO\nBlueSky Consulting: James Rodriguez, Managing Partner",
+    "metadata": {"priority": "normal", "source": "email", "date_received": "2024-04-01", "sender": "legal@novatech.com"},
+    "answer_key": {
+      "correct_type": "contract",
+      "extractable_fields": {"agreement_type": "Non-Disclosure Agreement", "effective_date": "April 1, 2024", "disclosing_party": "NovaTech Industries", "receiving_party": "BlueSky Consulting", "duration": "2 years"},
+      "missing_fields": [],
+      "inconsistencies": [],
+      "correct_department": "legal",
+      "should_escalate": false
+    }
+  },
+  {
+    "task_id": "med_001",
+    "difficulty": "medium",
+    "document_text": "INVOICE\n\nInvoice Number: INV-9982\nDate: June 10, 2024\n\nFrom: Pinnacle IT Services\n77 Cloud Lane, Seattle, WA 98101\n\nTo: Meridian Healthcare Group\n300 Wellness Blvd, Portland, OR 97201\n\nServices Rendered:\n- Annual cybersecurity audit: $8,500.00\n- Penetration testing (3 systems): $4,200.00\n- Compliance report generation: $1,800.00\n\nSubtotal: $14,500.00\nDiscount (10%): -$1,450.00\nTotal Due: $12,050.00\n\nPayment Terms: Net 45\nDue Date: July 25, 2024\n\nNote: PO reference required for processing.",
+    "metadata": {"priority": "normal", "source": "email", "date_received": "2024-06-11", "sender": "accounts@pinnacleit.com"},
+    "answer_key": {
+      "correct_type": "invoice",
+      "extractable_fields": {"invoice_number": "INV-9982", "date": "June 10, 2024", "vendor": "Pinnacle IT Services", "total_amount": "$12,050.00", "due_date": "July 25, 2024"},
+      "missing_fields": ["purchase_order_number"],
+      "inconsistencies": [],
+      "correct_department": "finance",
+      "should_escalate": false
+    }
+  },
+  {
+    "task_id": "med_002",
+    "difficulty": "medium",
+    "document_text": "EMPLOYMENT CONTRACT\n\nDate: May 15, 2024\n\nThis contract is between Vertex Analytics and Arun Mehta.\n\nPosition: Data Science Lead\nDepartment: Analytics\nStart Date: June 1, 2024\nAnnual Salary: $145,000\nBonus: 15% annual performance bonus\nProbation Period: 6 months\n\nBenefits:\n- Health insurance (family plan)\n- 20 days PTO\n- Stock options: 5,000 shares vesting over 4 years\n\nNotice Period: 90 days\nNon-Compete: 12 months post-employment\n\nSigned: Arun Mehta, Employee\nSigned: Linda Torres, HR Director\n\nNote: Salary in the offer letter was listed as $140,000. This contract supersedes the offer letter.",
+    "metadata": {"priority": "high", "source": "internal", "date_received": "2024-05-15", "sender": "hr@vertexanalytics.com"},
+    "answer_key": {
+      "correct_type": "contract",
+      "extractable_fields": {"employee_name": "Arun Mehta", "position": "Data Science Lead", "salary": "$145,000", "start_date": "June 1, 2024", "probation_period": "6 months"},
+      "missing_fields": [],
+      "inconsistencies": ["Salary mismatch between offer letter ($140,000) and contract ($145,000)"],
+      "correct_department": "hr",
+      "should_escalate": false
+    }
+  },
+  {
+    "task_id": "med_003",
+    "difficulty": "medium",
+    "document_text": "VENDOR PROPOSAL\n\nProposal #: VP-2024-0156\nDate: April 8, 2024\n\nFrom: GreenField Logistics\nTo: Atlas Manufacturing Corp.\n\nSubject: Warehousing and Distribution Services\n\nScope of Services:\n- Warehousing: 10,000 sq ft dedicated space\n- Pick and pack: Up to 500 orders/day\n- Last-mile delivery in tri-state area\n- Monthly inventory reporting\n\nPricing:\n- Monthly retainer: $18,500\n- Per-order fulfillment: $2.75\n- Estimated monthly total: $20,875\n\nContract Term: 24 months\nStart Date: To be determined\n\nDelivery SLA: 98% on-time delivery\nInsurance: Up to $500,000 per incident\n\nValid Until: May 8, 2024",
+    "metadata": {"priority": "normal", "source": "email", "date_received": "2024-04-09", "sender": "sales@greenfieldlogistics.com"},
+    "answer_key": {
+      "correct_type": "proposal",
+      "extractable_fields": {"proposal_number": "VP-2024-0156", "vendor": "GreenField Logistics", "monthly_cost": "$18,500", "contract_term": "24 months", "valid_until": "May 8, 2024"},
+      "missing_fields": ["start_date", "payment_terms"],
+      "inconsistencies": [],
+      "correct_department": "operations",
+      "should_escalate": false
+    }
+  },
+  {
+    "task_id": "med_004",
+    "difficulty": "medium",
+    "document_text": "TRAVEL AUTHORIZATION FORM\n\nEmployee: Jessica Park\nEmployee ID: EMP-2298\nDepartment: Marketing\n\nTravel Details:\n- Destination: London, UK\n- Purpose: International Marketing Summit 2024\n- Departure: September 12, 2024\n- Return: September 18, 2024 (note: conference ends September 15)\n\nEstimated Costs:\n- Flights: $1,800\n- Hotel (6 nights): $1,500\n- Per diem (7 days x $75): $525\n- Conference registration: $450\n- Ground transport: $200\nTotal: $4,475\n\nBudget Code: MKT-TRAVEL-2024\nManager Approval: Pending\n\nNotes: Employee requests 3 extra days for personal travel after conference.",
+    "metadata": {"priority": "normal", "source": "portal", "date_received": "2024-08-20", "sender": "jessica.park@company.com"},
+    "answer_key": {
+      "correct_type": "form",
+      "extractable_fields": {"employee_name": "Jessica Park", "destination": "London, UK", "departure_date": "September 12, 2024", "return_date": "September 18, 2024", "total_cost": "$4,475"},
+      "missing_fields": [],
+      "inconsistencies": ["Conference ends Sept 15 but return is Sept 18 - 3 extra days are personal travel, unclear if company should cover hotel/per diem for those days"],
+      "correct_department": "hr",
+      "should_escalate": false
+    }
+  },
+  {
+    "task_id": "med_005",
+    "difficulty": "medium",
+    "document_text": "IT SECURITY AUDIT REPORT\n\nReport ID: SEC-2024-Q2\nDate: July 30, 2024\nPrepared by: CyberShield Assessments\n\nClient: OmniCorp International\n\nExecutive Summary:\nA total of 14 vulnerabilities were identified across 3 systems.\n\nCritical Findings:\n1. Unpatched Apache server (CVE-2024-23897) - CRITICAL\n2. Default admin credentials on staging database - HIGH\n3. SSL certificate expired on payment gateway - HIGH\n\nMedium Findings:\n4-8. Various outdated library versions\n\nLow Findings:\n9-14. Minor configuration improvements\n\nRemediation Deadline: August 30, 2024\nCompliance Impact: SOC 2 Type II certification at risk\n\nNext Audit: October 2024",
+    "metadata": {"priority": "high", "source": "email", "date_received": "2024-07-31", "sender": "reports@cybershield.com"},
+    "answer_key": {
+      "correct_type": "report",
+      "extractable_fields": {"report_id": "SEC-2024-Q2", "date": "July 30, 2024", "auditor": "CyberShield Assessments", "total_vulnerabilities": "14", "remediation_deadline": "August 30, 2024"},
+      "missing_fields": ["remediation_owner"],
+      "inconsistencies": [],
+      "correct_department": "it",
+      "should_escalate": false
+    }
+  },
+  {
+    "task_id": "hard_001",
+    "difficulty": "hard",
+    "document_text": "URGENT - SUSPECTED FRAUDULENT INVOICE\n\nInvoice Number: INV-2024-7741\nDate: August 2, 2024\n\nFrom: Apex Global Services LLC\n999 Commerce Way, Suite 101\nWilmington, DE 19801\n\nTo: NexGen Corporation\n\nServices: Strategic consulting - Phase 3 implementation\nAmount: $47,500.00\n\nPayment: Wire transfer required within 48 hours\nAccount: Cayman Islands National Bank\nAccount #: 882-331-7700-4\n\nNOTES FROM ACCOUNTS PAYABLE:\n- No record of Apex Global Services in our vendor database\n- No PO or contract on file for 'Phase 3 implementation'\n- Wire transfer to offshore account is against company policy\n- Similar invoice from different entity rejected last month\n- Signature on approval line appears photocopied from CFO's other documents",
+    "metadata": {"priority": "urgent", "source": "email", "date_received": "2024-08-02", "sender": "invoices@apexgloballlc.com"},
+    "answer_key": {
+      "correct_type": "invoice",
+      "extractable_fields": {"invoice_number": "INV-2024-7741", "vendor": "Apex Global Services LLC", "amount": "$47,500.00", "date": "August 2, 2024", "payment_method": "Wire transfer"},
+      "missing_fields": ["purchase_order_number", "contract_reference", "authorized_approver"],
+      "inconsistencies": ["Vendor not in database", "No PO or contract on file", "Offshore wire transfer against policy", "Signature appears forged"],
+      "correct_department": "finance",
+      "should_escalate": true,
+      "escalation_reason": "Suspected fraud - forged signature, unknown vendor, offshore payment"
+    }
+  },
+  {
+    "task_id": "hard_002",
+    "difficulty": "hard",
+    "document_text": "EMPLOYEE COMPLAINT - CONFIDENTIAL\n\nDate Filed: September 5, 2024\nComplainant: [Name Redacted - ID: EMP-3387]\nDepartment: Engineering\n\nSubject: Workplace Harassment and Hostile Work Environment\n\nStatement:\nI have been subjected to repeated inappropriate comments and exclusionary behavior by my direct supervisor over the past 4 months. Specific incidents include:\n\n1. July 12, 2024: Supervisor made derogatory remarks about my accent during a team meeting with 6+ witnesses.\n2. August 3, 2024: Denied access to a critical project without explanation, despite being the most qualified team member.\n3. August 20, 2024: Supervisor shared my private medical information with team members.\n4. September 1, 2024: Received a negative performance review that contradicts my project delivery metrics (all projects delivered on time, 4.8/5 peer reviews).\n\nPrevious Actions: Reported to HR on August 5, 2024. No action was taken. Written follow-up sent August 25, 2024 - no response.\n\nRequested Action: Formal investigation and protection from retaliation.\n\nThis is my third attempt to escalate this matter.",
+    "metadata": {"priority": "urgent", "source": "portal", "date_received": "2024-09-05", "sender": "anonymous_complaint_system"},
+    "answer_key": {
+      "correct_type": "complaint",
+      "extractable_fields": {"complainant_id": "EMP-3387", "department": "Engineering", "date_filed": "September 5, 2024", "complaint_type": "Workplace Harassment", "incidents_count": "4"},
+      "missing_fields": ["supervisor_name", "witnesses_list"],
+      "inconsistencies": ["Previous HR report on Aug 5 had no action taken", "Negative performance review contradicts 4.8/5 peer reviews and on-time delivery"],
+      "correct_department": "hr",
+      "should_escalate": true,
+      "escalation_reason": "Repeated harassment complaint with prior HR inaction - requires executive/legal escalation"
+    }
+  },
+  {
+    "task_id": "hard_003",
+    "difficulty": "hard",
+    "document_text": "FACTURA / INVOICE\n\nNúmero de Factura: FAC-2024-1892\nFecha / Date: 15 de Julio, 2024 / July 15, 2024\n\nDe / From: Soluciones Tecnológicas del Sur S.A.\nAv. Libertador 4200, Piso 12\nBuenos Aires, Argentina\nCUIT: 30-71234567-8\n\nPara / To: Pacific Rim Holdings Inc.\n1200 Harbor Blvd, Long Beach, CA 90802\n\nDescripción / Description:\n- Desarrollo de software personalizado / Custom software development: $32,000 USD\n- Soporte técnico trimestral / Quarterly tech support: $4,500 USD\n- Licencias de API / API Licenses: $2,800 USD\n\nTotal: $39,300.00 USD\n\nCondiciones de Pago / Payment Terms: Net 60\nFecha de Vencimiento / Due Date: September 13, 2024\n\nNota: El monto en pesos argentinos es ARS $35,370,000 (tipo de cambio: 1 USD = 900 ARS)\nNote: This invoice is subject to Argentine tax regulations. Withholding tax certificate required.",
+    "metadata": {"priority": "normal", "source": "email", "date_received": "2024-07-16", "sender": "facturacion@solucionestec.com.ar"},
+    "answer_key": {
+      "correct_type": "invoice",
+      "extractable_fields": {"invoice_number": "FAC-2024-1892", "vendor": "Soluciones Tecnológicas del Sur S.A.", "total_amount": "$39,300.00 USD", "due_date": "September 13, 2024", "date": "July 15, 2024"},
+      "missing_fields": ["withholding_tax_certificate", "purchase_order_number"],
+      "inconsistencies": ["ARS conversion may be outdated - verify exchange rate at time of payment"],
+      "correct_department": "finance",
+      "should_escalate": false,
+      "ambiguities": ["Bilingual document requires careful field extraction", "International tax implications"]
+    }
+  },
+  {
+    "task_id": "hard_004",
+    "difficulty": "hard",
+    "document_text": "DATA BREACH NOTIFICATION\n\nDate: October 1, 2024\nClassification: CONFIDENTIAL - URGENT\n\nFrom: IT Security Operations Center\nTo: Executive Leadership, Legal, Compliance\n\nIncident ID: INC-SEC-2024-0042\n\nSummary:\nAt 02:47 AM EST on September 30, 2024, our intrusion detection system flagged unauthorized access to the customer database (DB-CUST-PROD-01). Preliminary investigation reveals:\n\n- Approximately 23,000 customer records were accessed\n- Data includes: names, email addresses, phone numbers, encrypted payment tokens\n- Attack vector: Compromised third-party API key (vendor: DataSync Partners)\n- Duration of unauthorized access: Estimated 6-8 hours\n- Current status: Breach contained, compromised keys revoked\n\nRegulatory Implications:\n- GDPR notification required within 72 hours (EU customers affected)\n- State breach notification laws apply (CA, NY, TX customers identified)\n- PCI DSS incident response protocol activated\n\nImmediate Actions Taken:\n1. Compromised API keys revoked\n2. Affected systems isolated\n3. Forensic imaging of servers initiated\n4. DataSync Partners notified and access suspended\n\nRequired Decisions:\n- Approve customer notification timeline\n- Engage external forensics firm\n- Determine if cyber insurance claim should be filed\n- Legal review of notification obligations",
+    "metadata": {"priority": "urgent", "source": "internal", "date_received": "2024-10-01", "sender": "soc@company.com"},
+    "answer_key": {
+      "correct_type": "report",
+      "extractable_fields": {"incident_id": "INC-SEC-2024-0042", "date_detected": "September 30, 2024", "records_affected": "23,000", "attack_vector": "Compromised third-party API key", "vendor_involved": "DataSync Partners"},
+      "missing_fields": ["external_forensics_firm", "insurance_policy_number", "customer_notification_draft"],
+      "inconsistencies": [],
+      "correct_department": "compliance",
+      "should_escalate": true,
+      "escalation_reason": "Major data breach requiring executive decision-making and multi-department coordination"
+    }
+  },
+  {
+    "task_id": "hard_005",
+    "difficulty": "hard",
+    "document_text": "QUARTERLY FINANCIAL REPORT - Q2 2024\n\nPrepared by: Finance Department\nReview Date: July 20, 2024\n\nRevenue Summary:\n- Product Sales: $2,340,000\n- Service Revenue: $890,000\n- Licensing Fees: $445,000\nTotal Revenue: $3,675,000\n\nExpense Summary:\n- Salaries & Benefits: $1,850,000\n- Operations: $620,000\n- Marketing: $340,000\n- R&D: $280,000\n- Administrative: $190,000\nTotal Expenses: $3,280,000\n\nNet Income: $395,000\nNet Margin: 10.7%\n\nNotes:\n1. Revenue total should be $3,675,000 but GL shows $3,645,000 - $30,000 discrepancy under investigation\n2. R&D expenses include $75,000 payment to CEO's brother's consulting firm (BrightIdeas LLC) - no competitive bid on file\n3. Marketing spend exceeded Q2 budget by 22% without documented approval\n4. Cash reserves dropped 34% YoY - potential liquidity concern\n\nAuditor Flag: Items 1, 2, and 4 require management response before sign-off.",
+    "metadata": {"priority": "high", "source": "internal", "date_received": "2024-07-20", "sender": "finance@company.com"},
+    "answer_key": {
+      "correct_type": "report",
+      "extractable_fields": {"report_period": "Q2 2024", "total_revenue": "$3,675,000", "total_expenses": "$3,280,000", "net_income": "$395,000", "net_margin": "10.7%"},
+      "missing_fields": ["competitive_bid_documentation", "marketing_overspend_approval", "management_response"],
+      "inconsistencies": ["Revenue discrepancy: reported $3,675,000 vs GL $3,645,000 ($30,000 gap)", "Related party transaction: $75,000 to CEO's brother without competitive bid", "Marketing exceeded budget by 22% without approval"],
+      "correct_department": "finance",
+      "should_escalate": true,
+      "escalation_reason": "Related party transaction and revenue discrepancy require executive audit committee review"
+    }
+  }
+]
