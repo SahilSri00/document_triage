@@ -4,3 +4,14 @@ type: space
 runtime: fastapi
 app: server.app:app
 port: 7860
+
+tasks:
+  - id: easy_001
+    difficulty: easy
+    description: "Triage a simple purchase order invoice and exact essential details."
+  - id: med_001
+    difficulty: medium
+    description: "Triage an international IT services invoice and detect missing fields."
+  - id: hard_001
+    difficulty: hard
+    description: "Triage a highly suspicious invoice and determine if escalated fraud processes are required."
