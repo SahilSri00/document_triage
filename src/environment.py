@@ -42,6 +42,13 @@ import gymnasium as gym
 import numpy as np
 from gymnasium import spaces
 
+# Formal OpenEnv Rubric (used for introspectable scoring)
+try:
+    from src.rubrics import DocumentTriageRubric
+    _HAS_RUBRIC = True
+except ImportError:
+    _HAS_RUBRIC = False
+
 
 class DocumentTriageEnv(gym.Env):
     """Gymnasium environment for document triage and routing.
@@ -207,6 +214,10 @@ class DocumentTriageEnv(gym.Env):
             }
         )
 
+        # ── Formal OpenEnv Rubric (introspectable scoring) ───────────
+        if _HAS_RUBRIC:
+            self.rubric = DocumentTriageRubric()
+
         # ── Initialise mutable state ─────────────────────────────────
         self._init_state()
 
@@ -350,6 +361,11 @@ class DocumentTriageEnv(gym.Env):
             info["score_breakdown"] = self._get_score_breakdown()
             info["grade"] = self._letter_grade(final_score)
 
+            # Also compute via formal OpenEnv Rubric for introspection
+            if _HAS_RUBRIC:
+                rubric_data = self._build_rubric_observation()
+                info["rubric_result"] = self.rubric.score_episode(rubric_data)
+
         info["step_reward"] = reward
         info["total_reward"] = self.total_reward
         info["action"] = action_name
@@ -417,6 +433,25 @@ class DocumentTriageEnv(gym.Env):
             "steps_taken": self.steps_taken,
             "steps_remaining": self.steps_remaining,
             "action_history": json.dumps(self.action_history),
+        }
+
+    def _build_rubric_observation(self) -> Dict[str, Any]:
+        """Build the full observation including answer_key for Rubric scoring.
+
+        Unlike _build_observation(), this DOES include the answer_key because
+        the Rubric needs ground truth to compute scores. This is never sent to
+        the agent.
+        """
+        return {
+            "answer_key": self.answer_key,
+            "classified_as": self.classified_as,
+            "extracted_fields": self.extracted_fields,
+            "validated_fields": self.validated_fields,
+            "flagged_missing": self.flagged_missing,
+            "flagged_inconsistencies": self.flagged_inconsistencies,
+            "routed_to": self.routed_to,
+            "escalated": self.escalated,
+            "steps_taken": self.steps_taken,
         }
 
     # ──────────────────────────────────────────────────────────────────

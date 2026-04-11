@@ -6,12 +6,80 @@ app: server.app:app
 port: 7860
 
 tasks:
+  # ── Easy (clean documents, straightforward triage) ──────────────
   - id: easy_001
     difficulty: easy
-    description: "Triage a simple purchase order invoice and exact essential details."
+    description: "Triage a standard Acme Corp invoice — classify, extract 5 fields, route to finance."
+    grader: src.rubrics:DocumentTriageRubric
+
+  - id: easy_002
+    difficulty: easy
+    description: "Process an employee onboarding letter — extract HR details and route to HR."
+    grader: src.rubrics:DocumentTriageRubric
+
+  - id: easy_003
+    difficulty: easy
+    description: "Handle a purchase order from BrightStar Manufacturing — extract line items and route to operations."
+    grader: src.rubrics:DocumentTriageRubric
+
+  - id: easy_004
+    difficulty: easy
+    description: "Review an expense reimbursement receipt — extract employee and cost details, route to finance."
+    grader: src.rubrics:DocumentTriageRubric
+
+  - id: easy_005
+    difficulty: easy
+    description: "Process a Non-Disclosure Agreement — extract parties, duration, and route to legal."
+    grader: src.rubrics:DocumentTriageRubric
+
+  # ── Medium (missing fields, inconsistencies) ────────────────────
   - id: med_001
     difficulty: medium
-    description: "Triage an international IT services invoice and detect missing fields."
+    description: "Triage an IT services invoice with a missing PO reference — detect the gap and route correctly."
+    grader: src.rubrics:DocumentTriageRubric
+
+  - id: med_002
+    difficulty: medium
+    description: "Process an employment contract where the salary contradicts the offer letter — flag the inconsistency."
+    grader: src.rubrics:DocumentTriageRubric
+
+  - id: med_003
+    difficulty: medium
+    description: "Evaluate a vendor logistics proposal with missing start date and payment terms."
+    grader: src.rubrics:DocumentTriageRubric
+
+  - id: med_004
+    difficulty: medium
+    description: "Review a travel authorization form where personal travel days inflate costs — flag the inconsistency."
+    grader: src.rubrics:DocumentTriageRubric
+
+  - id: med_005
+    difficulty: medium
+    description: "Analyze an IT security audit report with critical CVEs — detect missing remediation owner."
+    grader: src.rubrics:DocumentTriageRubric
+
+  # ── Hard (fraud, harassment, multilingual, data breach) ─────────
   - id: hard_001
     difficulty: hard
-    description: "Triage a highly suspicious invoice and determine if escalated fraud processes are required."
+    description: "Detect a suspected fraudulent invoice — forged signature, unknown vendor, offshore payment. Must escalate."
+    grader: src.rubrics:DocumentTriageRubric
+
+  - id: hard_002
+    difficulty: hard
+    description: "Handle a workplace harassment complaint with prior HR inaction — requires executive/legal escalation."
+    grader: src.rubrics:DocumentTriageRubric
+
+  - id: hard_003
+    difficulty: hard
+    description: "Process a bilingual Spanish/English invoice with international tax implications and currency conversion."
+    grader: src.rubrics:DocumentTriageRubric
+
+  - id: hard_004
+    difficulty: hard
+    description: "Triage a major data breach notification affecting 23,000 records — GDPR and multi-department coordination required."
+    grader: src.rubrics:DocumentTriageRubric
+
+  - id: hard_005
+    difficulty: hard
+    description: "Analyze a quarterly financial report with revenue discrepancies and a related-party transaction. Must escalate."
+    grader: src.rubrics:DocumentTriageRubric

@@ -1,17 +1,12 @@
 """
 Document Triage Environment — OpenEnv Package.
 
-Exports:
-    DocumentTriageAction      - Typed action model
-    DocumentTriageObservation  - Typed observation model
-    DocumentTriageClient       - EnvClient for remote connections
+Exports the core Gymnasium environment for direct use.
+For OpenEnv server models, see server/models.py.
 """
 
-from .models import DocumentTriageAction, DocumentTriageObservation
-from .client import DocumentTriageClient
+from src.environment import DocumentTriageEnv
 
 __all__ = [
-    "DocumentTriageAction",
-    "DocumentTriageObservation",
-    "DocumentTriageClient",
+    "DocumentTriageEnv",
 ]

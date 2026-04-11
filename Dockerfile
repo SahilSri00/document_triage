@@ -12,8 +12,6 @@ COPY openenv.yaml .
 COPY src/ src/
 COPY tasks/ tasks/
 COPY server/ server/
-COPY models.py .
-COPY client.py .
 COPY __init__.py .
 COPY inference.py .
 COPY README.md .

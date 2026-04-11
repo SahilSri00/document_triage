@@ -274,28 +274,25 @@ def main():
         for tid in env.get_tasks_by_difficulty(args.difficulty):
             run_episode(env, client, task_id=tid)
             time.sleep(1)
-    elif args.all:
-        results = []
-        for task in env.tasks:
-            r = run_episode(env, client, task_id=task["task_id"])
-            results.append(r)
-            time.sleep(1)
     else:
-        # ** FIX: By default, run 3 tasks so the "3+ tasks with graders" check passes! **
-        target_tasks = ["easy_001", "med_001", "hard_001"]
-        print(f"[INFO] No arguments. Running default 3 tasks: {target_tasks}", flush=True)
+        # Default: run ALL 15 tasks (easy, medium, hard)
+        # --all flag also triggers this path for backward compat
+        all_task_ids = [t["task_id"] for t in env.tasks]
+        print(f"[INFO] Running all {len(all_task_ids)} tasks: {all_task_ids}", flush=True)
         results = []
-        for tid in target_tasks:
+        for tid in all_task_ids:
             r = run_episode(env, client, task_id=tid)
             results.append(r)
             time.sleep(1)
-            
+
+        # Summary table
         print(f"\n{'Task':<14} {'Score':>7} {'Grade':>6} {'Steps':>6}")
         print("-" * 40)
         for r in results:
             print(f"{r['task_id']:<14} {r['score']:>6.1%} {r['grade']:>6} {r['steps']:>6}")
         avg = sum(r["score"] for r in results) / len(results)
-        print(f"\nOverall: {avg:.1%}")
+        print(f"\nOverall: {avg:.1%} across {len(results)} tasks")
 
 if __name__ == "__main__":
     main()
+
